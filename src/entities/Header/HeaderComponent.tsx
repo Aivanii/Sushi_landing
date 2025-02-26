@@ -1,12 +1,15 @@
-import React from "react";
-
+import "../../app/index.css";
 const Header = () => {
-  return <header className="d">
- <nav>
-
- header
- </nav>
-    </header>;
+  return (
+    <header>
+      <nav className="flex">
+        <div>1</div>
+        <div className="text-7xl">2</div>
+        <div>3</div>
+        <div>4</div>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;

@@ -1,9 +1,12 @@
 //pages
-import {HomePage} from "./index.ts";
-
+import { HomePage } from "./index.ts";
 
 function App() {
-  return <HomePage />;
+  return (
+    <>
+      <HomePage />
+    </>
+  );
 }
 
 export default App;

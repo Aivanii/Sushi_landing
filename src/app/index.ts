@@ -1,6 +1,4 @@
-//main components
-import "./styles.css";
-
+import "./index.css"
 // pages
 import HomePage from "../pages/HomePage/Home.page";
 export { HomePage };
