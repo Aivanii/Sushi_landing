@@ -13,3 +13,9 @@ export { HomeImgContainerComponent };
 
 import OrderConditionsComponent from "../entities/OrderConditions/OrderConditionsComponent";
 export { OrderConditionsComponent };
+
+import MenuComponent from "../entities/Menu/MenuComponent";
+export { MenuComponent };
+
+import { Menu } from "../entities/Menu/Menu";
+export { Menu };

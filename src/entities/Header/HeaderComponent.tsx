@@ -1,23 +1,21 @@
-import { NavLink } from "react-router";
-
 const Header = () => {
   return (
     <header>
       <nav className="flex justify-around text-white py-8 text-2xl bg-black z-20">
         <div>
-          <NavLink to="/" end>
+          <a href="/">
             Roll Realms
-          </NavLink>
+          </a>
         </div>
         <div>
-          <NavLink to="/menu" end>
+          <a href="/#menu">
             Меню
-          </NavLink>
+          </a>
         </div>
         <div>
-          <NavLink to="/dostavka" end>
+          <a href="/dostavka">
             Доставка
-          </NavLink>
+          </a>
         </div>
         <div>88005553535</div>
         <div>Заказать звонок</div>
