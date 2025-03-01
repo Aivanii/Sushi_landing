@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Oswald:wght@200..700&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+body{
+  min-height: 360px;
+}
+* {
+  font-family: "PT Sans Narrow", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+img.icon {
+  width: 96px;
+  height: 96px;
+}
