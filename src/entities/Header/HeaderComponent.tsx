@@ -1,4 +1,3 @@
-import "../../app/index.css";
 const Header = () => {
   return (
     <header>
