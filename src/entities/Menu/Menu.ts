@@ -4,6 +4,9 @@ export const Menu = [
     imgs: [
       "https://static.1000.menu/img/content/27657/rolly-s-krevetkami_1530116469_16_max.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBl-yyVEUe8yIq-hrujUOS0FuEJbxEP5oW3w&s",
+      "https://sushiwok.ru/img/f01c0c83831f672b505db5585e39d03c",
+      "https://storage.delikateska.ru/cache/4/9/01_d141.jpg/w480.jpg",
+      "https://img.eda1.ru/im/menuProduct/655b5a151b00f_w900_jpg_w900_q95.webp"
     ],
     price: 290,
     count: 4,
