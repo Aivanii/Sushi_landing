@@ -1,3 +1,4 @@
+import { useState } from "react";
 interface Props {
   isVisible: boolean;
   goodInfo: {
@@ -9,10 +10,19 @@ interface Props {
 
 const FullGoodInfo: React.FC<Props> = ({ isVisible, goodInfo }) => {
  
-    const changeImg = (value) => {
-        
-    }
+    const [currentSlide, setCurrentSlide] = useState<number>(0);
+
+    const changeSlide = (value : number) =>{
+        if(currentSlide + value > goodInfo.imgs.length -1){
+            setCurrentSlide(0);
+        }else if(currentSlide + value < 0){
+            setCurrentSlide(goodInfo.imgs.length - 1);
+        }else{
+            setCurrentSlide(currentSlide + value);
+        }
+    };
     
+
     return (
     <div>
       {isVisible ? (
@@ -23,18 +33,17 @@ const FullGoodInfo: React.FC<Props> = ({ isVisible, goodInfo }) => {
           <div className="flex row justify-center items-center">
             <div>
               <div className="w-[clamp(200px,50vw,600px)] h-[clamp(150px,37.5vw,450px)] flex overflow-hidden">
-                {goodInfo.imgs.map((img, index) => (
                   <img
-                    src={img}
-                    key={`${img}`}
-                    alt={`${goodInfo.name} фото #${index + 1}`}
+                    src={goodInfo.imgs[currentSlide]}
+                    key={goodInfo.imgs[currentSlide]}
+                    alt={goodInfo.name}
                     className="w-[clamp(200px,50vw,600px)] h-[clamp(150px,37.5vw,450px)] object-cover my-auto rounded-sm shadow-lg"
                   />
-                ))}
               </div>
               <div className="absolute left-(50$) top-8 w-[clamp(200px,50vw,600px)] h-[clamp(150px,37.5vw,450px)]">
                 <div className="flex items-center justify-between h-full p-4">
                   <button
+                  onClick={() => changeSlide(1)}
                     className="cursor-pointer opacity-50 w-12 h-12 z-10 bg-black rounded-full flex
                 justify-center items-center flex-col hover:opacity-75 transition"
                   >
@@ -43,6 +52,7 @@ const FullGoodInfo: React.FC<Props> = ({ isVisible, goodInfo }) => {
                   </button>
 
                   <button
+                  onClick={() => changeSlide(-1)}
                     className="cursor-pointer opacity-50 w-12 h-12 z-10 bg-black rounded-full flex
                 justify-center items-center flex-col hover:opacity-75 transition"
                   >
