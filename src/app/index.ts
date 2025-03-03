@@ -19,3 +19,14 @@ export { MenuComponent };
 
 import { Menu } from "../entities/Menu/Menu";
 export { Menu };
+
+//UI
+import Button from "../shared/Button";
+export { Button };
+
+import ShowFullInfoButton from "../shared/ShowFullInfoButton";
+export { ShowFullInfoButton };
+
+//features
+import FullGoodInfo from "../features/FullGoodInfo";
+export { FullGoodInfo };
