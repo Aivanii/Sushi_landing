@@ -81,7 +81,7 @@ const FullGoodInfo: React.FC<Props> = ({ isVisible, goodInfo }) => {
               </div>
             </div>
             <h3 className="text-center text-4xl p-4">{goodInfo.name}</h3>
-            <p className="overflow-y-auto">{goodInfo.goodDescription}</p>
+            <p className="overflow-y-auto h-28">{goodInfo.goodDescription}</p>
           </div>
         </div>
       ) : (

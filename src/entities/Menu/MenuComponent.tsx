@@ -17,7 +17,7 @@ const MenuComponent = () => {
                 className="w-64 h-64 object-cover "
               />
               <h4 className="text-3xl text-center">{elem.name}</h4>
-              <p className="text-left">{elem.goodDescription}</p>
+              <p className="text-left line-clamp-2">{elem.goodDescription}</p>
               <span className="pt-6">Количество: {elem.count}</span>
               <span>Цена: {elem.price} рублей</span>
               <div className="flex justify-between w-auto relative">
