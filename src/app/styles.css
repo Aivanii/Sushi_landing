@@ -17,11 +17,46 @@ img.icon {
   height: 96px;
 }
 
-.markdown-container h3{
+.markdown-container h3 {
   font-size: 1.5em;
   text-align: center;
   margin-top: 16px;
 }
-.markdown-container *{
+.markdown-container * {
   margin-top: 8px;
+}
+
+@keyframes zoomIn {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation: zoomIn .25s ease-in-out forwards; 
+}
+
+@keyframes zoomOut {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(0);
+      opacity: 0;
+  }
+}
+
+.zoom-in {
+  animation: zoomIn .25s ease-in-out forwards; 
+}
+
+
+.zoom-out {
+  animation: zoomOut .25s ease-in-out forwards; 
 }

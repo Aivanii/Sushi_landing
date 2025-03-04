@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import classNames from "classnames";
 interface Props {
   isVisible: boolean;
   goodInfo: {
@@ -8,12 +9,16 @@ interface Props {
     imgs: string[];
   };
   setIsVisible: (value: boolean) => void;
+  isAnimZoomOut: boolean;
+  setIsAnimZoomOut: (value: boolean) => void;
 }
 
 const FullGoodInfo: React.FC<Props> = ({
   isVisible,
   goodInfo,
   setIsVisible,
+  isAnimZoomOut,
+  setIsAnimZoomOut,
 }) => {
   const currentSlide = useRef<number>(1);
 
@@ -46,20 +51,33 @@ const FullGoodInfo: React.FC<Props> = ({
     }
   };
 
+  const startZoomOutAnim = () => {
+    setIsAnimZoomOut(true);
+    setTimeout(() => {
+      setIsVisible(false);
+      setIsAnimZoomOut(false);
+    }, 250);
+  };
+
   return (
     <div>
       {isVisible ? (
         <div>
           <div
-            className="fixed top-1/2 left-1/2 -translate-1/2 bg-white text-black p-6 rounded-sm w-[clamp(300px,80vw,1200px)] z-50
-        shadow-2xl scroll-auto h-4/5 "
+            className={classNames(
+              "fixed top-1/2 left-1/2 -translate-1/2 bg-white text-black p-6 rounded-sm w-[clamp(300px,80vw,1200px)] z-50 shadow-2xl scroll-auto h-4/5",
+              {
+                "zoom-in": !isAnimZoomOut, // Применяется, если isAnimZoomOut false
+                "zoom-out": isAnimZoomOut, // Применяется, если isAnimZoomOut true
+              }
+            )}
           >
             <div className="flex row justify-center items-center">
               <div>
                 <button
                   className="cursor-pointer opacity-50 w-12 h-12 z-10 bg-black rounded-sm flex justify-center
                   items-center flex-col hover:opacity-75 transition absolute right-5 top-5"
-                  onClick={() => setIsVisible(false)}
+                  onClick={startZoomOutAnim}
                 >
                   <div className="w-4 h-0.5 bg-white rotate-45 rounded-sm z-20"></div>
                   <div className="w-4 h-0.5 bg-white rotate-135 rounded-sm z-20 -mt-0.5"></div>
