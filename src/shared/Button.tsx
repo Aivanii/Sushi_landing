@@ -10,7 +10,7 @@ const Button: React.FC<ButtonProps> = ({
   fn = () => {}, 
 }) => {
   return (
-    <button onClick={fn} className="bg-amber-500 py-4 px-6 rounded-sm m-4 text-white 
+    <button onClick={fn} className="bg-amber-500 rounded-sm m-4 text-white 
     hover:bg-amber-600 transition active:bg-amber-700 cursor-pointer">
       {text}
     </button>
