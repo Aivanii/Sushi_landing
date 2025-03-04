@@ -7,7 +7,7 @@ const MenuComponent = () => {
       <div className="flex flex-wrap justify-center items-center gap-8">
         {Menu.map((elem) => (
           <div 
-          key={elem.name}>
+              key={elem.name}>
             <div
               className="w-96 h-auto flex flex-col justify-center items-center shadow-md rounded-sm  p-5 gap-y-2 mt-6 relative"
             >

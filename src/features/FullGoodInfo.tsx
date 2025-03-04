@@ -103,8 +103,8 @@ const FullGoodInfo: React.FC<Props> = ({
                 </div>
               </div>
             </div>
-            <h3 className="text-center text-4xl p-4">{goodInfo.name}</h3>
-            <div className="overflow-y-auto h-28">
+            <div className="overflow-y-auto h-2/5 mt-4 markdown-container">
+              <h3 className="text-2xl text-center">{goodInfo.name}</h3>
               <ReactMarkdown>{goodInfo.goodDescription}</ReactMarkdown>
             </div>
           </div>
