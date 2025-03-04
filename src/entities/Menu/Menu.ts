@@ -1,4 +1,13 @@
-export const Menu = [
+interface MenuInterface {
+  id: number;
+  name: string;
+  imgs: string[];
+  price: number;
+  count: number;
+  goodDescription: string;
+}
+
+export const Menu : MenuInterface[]= [
   {
     id: 0,
     name: "Ролл с креветкой",
