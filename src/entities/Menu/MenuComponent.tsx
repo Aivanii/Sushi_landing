@@ -6,9 +6,9 @@ const MenuComponent = () => {
       <h2 className="text-6xl text-center">Наше меню</h2>
       <div className="flex flex-wrap justify-center items-center gap-8">
         {Menu.map((elem) => (
-          <div>
+          <div 
+          key={elem.name}>
             <div
-              key={elem.name}
               className="w-96 h-auto flex flex-col justify-center items-center shadow-md rounded-sm  p-5 gap-y-2 mt-6 relative"
             >
               <img

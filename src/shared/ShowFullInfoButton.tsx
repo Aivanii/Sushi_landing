@@ -20,7 +20,8 @@ const ShowFullInfoButton: React.FC<ButtonProps> = ({ goodInfo }) => {
       >
         Подробнее {isVisible ? "true" : "false"}
       </button>
-      <FullGoodInfo isVisible={isVisible} goodInfo = {goodInfo}/>
+      <FullGoodInfo isVisible={isVisible} goodInfo = {goodInfo}
+      setIsVisible = {setIsVisible}/>
     </>
   );
 };
