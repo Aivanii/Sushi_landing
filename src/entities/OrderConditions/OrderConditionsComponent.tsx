@@ -9,7 +9,7 @@ const OrderConditionsComponent = () => {
           className="icon"
         />
         <span>пн-пт 9:00-21:00</span>
-        <span>пн-пт 9:00-17:00</span>
+        <span>сб-вс 9:00-17:00</span>
       </div>
       <div className="w-0.5 h-3xs bg-black opacity-10"/>
       <div className="w-4xs flex justify-center flex-col">
