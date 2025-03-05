@@ -26,6 +26,9 @@ export { DeliveryComponent };
 import ContactsComponent from "../entities/Contacts/ContactsComponent";
 export { ContactsComponent };
 
+import Footer from "../entities/Footer/FooterComponent";
+export { Footer };
+
 //UI
 import Button from "../shared/Button";
 export { Button };
