@@ -23,6 +23,9 @@ export { Menu };
 import DeliveryComponent from "../entities/Delivery/DeliveryComponent";
 export { DeliveryComponent };
 
+import ContactsComponent from "../entities/Contacts/ContactsComponent";
+export { ContactsComponent };
+
 //UI
 import Button from "../shared/Button";
 export { Button };
