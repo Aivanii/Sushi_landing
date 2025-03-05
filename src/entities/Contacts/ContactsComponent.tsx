@@ -1,6 +1,6 @@
 const ContactsComponent = () => {
   return (
-    <div className="mt-16 py-6 bg-white">
+    <div className="mt-16 py-6 bg-white" id = "contacts">
       <h2 className="text-6xl text-center">Контакты</h2>
       <div className="flex justify-center items-center flex-col">
         <div className="flex justify-around">
