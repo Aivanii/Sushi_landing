@@ -20,6 +20,9 @@ export { MenuComponent };
 import { Menu } from "../entities/Menu/Menu";
 export { Menu };
 
+import DeliveryComponent from "../entities/Delivery/DeliveryComponent";
+export { DeliveryComponent };
+
 //UI
 import Button from "../shared/Button";
 export { Button };
@@ -31,5 +34,15 @@ export { ShowFullInfoButton };
 import FullGoodInfo from "../features/FullGoodInfo";
 export { FullGoodInfo };
 
-import { AddToShopKit, CheckIsGoodInShopKit, RemoveFromShopKit, ChangeCountInShopKit } from "../features/ShopKitUtils";
-export { AddToShopKit, CheckIsGoodInShopKit, RemoveFromShopKit, ChangeCountInShopKit };
+import {
+  AddToShopKit,
+  CheckIsGoodInShopKit,
+  RemoveFromShopKit,
+  ChangeCountInShopKit,
+} from "../features/ShopKitUtils";
+export {
+  AddToShopKit,
+  CheckIsGoodInShopKit,
+  RemoveFromShopKit,
+  ChangeCountInShopKit,
+};
