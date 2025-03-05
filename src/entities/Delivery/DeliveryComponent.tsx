@@ -1,6 +1,6 @@
 const DeliveryComponent = () => {
   return (
-    <div className="mt-16 py-6 bg-white">
+    <div className="mt-16 py-6 bg-white" id = "delivery">
       <h2 className="text-6xl text-center">Доставка</h2>
       <div className="flex justify-center items-centers gap-8">
         <div>

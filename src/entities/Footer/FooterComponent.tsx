@@ -43,16 +43,16 @@ const Footer = () => {
           <h5>Категории:</h5>
           <ul className="flex flex-col h-full justify-evenly text-2xl">
             <div>
-              <a>Главная</a>
+              <a href = "#HomeImgContainer">Главная</a>
             </div>
             <div>
-              <a>Меню</a>
+              <a href = "#menu">Меню</a>
             </div>
             <div>
-              <a>Доставка</a>
+              <a href = "delivery">Доставка</a>
             </div>
             <div>
-              <a>Заказать звонок</a>
+              <a >Заказать звонок</a>
             </div>
           </ul>
         </div>
