@@ -42,7 +42,7 @@ const MenuComponent = () => {
               />
               <h4 className="text-3xl text-center">{elem.name}</h4>
               <p className="text-left line-clamp-2">{elem.goodDescription}</p>
-              <span className="pt-6">Количество: {elem.count}</span>
+              <span className="pt-6">Количество: {(elem.count).toFixed(2)}</span>
               <span>Цена: {elem.price} рублей</span>
               <div className="flex justify-between w-auto relative">
                 {goodsCountInOrderList[index] ? (
@@ -64,6 +64,15 @@ const MenuComponent = () => {
                 )}
                 <ShowFullInfoButton goodInfo={elem} />
               </div>
+              {goodsCountInOrderList[index] > 0 && (
+                <div>
+                <div className="flex justify-around items-center">
+                  <Button text="-" />
+                  <span>{goodsCountInOrderList[index]}</span>
+                  <Button text="+" />
+                </div>
+                <span className="text-center">{`${(goodsCountInOrderList[index] * elem.price).toFixed(2)} рублей`}</span>
+                </div>)}
             </div>
           </div>
         ))}
