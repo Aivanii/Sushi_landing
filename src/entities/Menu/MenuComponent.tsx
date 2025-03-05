@@ -70,7 +70,15 @@ const MenuComponent = () => {
                   <div className="flex justify-around items-center">
                     <Button
                       text="-"
-                      fn={() => ChangeCountInShopKit(elem.id, -1)}
+                      fn={() => {
+                        ChangeCountInShopKit(elem.id, -1);
+                        changeStateGoodsInOrderList(
+                          index,
+                          goodsCountInOrderList[index] - 1 < 0
+                            ? 0
+                            : goodsCountInOrderList[index] - 1
+                        );
+                      }}
                     />
                     <span>{goodsCountInOrderList[index]}</span>
                     <Button
