@@ -5,7 +5,6 @@ const AddToShopKit = (id: number): void => {
 };
 
 const CheckIsGoodInShopKit = (id: string): boolean => {
-    console.log(JSON.parse(localStorage.getItem("orders")), id);
   if (localStorage.getItem("orders") == null) return false;
   const isGoodInOrderList: number =
     JSON.parse(localStorage.getItem("orders"))[id]?.count || 0;
@@ -21,4 +20,13 @@ const RemoveFromShopKit = (id: number): void => {
     localStorage.setItem("orders", JSON.stringify(orders));
 };
 
-export { AddToShopKit, CheckIsGoodInShopKit, RemoveFromShopKit };
+const ChangeCountInShopKit = (id: number, count: number): void => {
+  console.log("i was activated")
+  let orders = JSON.parse(localStorage.getItem("orders")) || {};
+  orders[id].count += count;
+  if (count === 0) delete orders[id];
+  if (orders[id] + count > 99) orders[id] = 99;
+  localStorage.setItem("orders", JSON.stringify(orders));
+}
+
+export { AddToShopKit, CheckIsGoodInShopKit, RemoveFromShopKit,  ChangeCountInShopKit};

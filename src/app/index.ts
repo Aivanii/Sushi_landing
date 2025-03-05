@@ -31,5 +31,5 @@ export { ShowFullInfoButton };
 import FullGoodInfo from "../features/FullGoodInfo";
 export { FullGoodInfo };
 
-import { AddToShopKit, CheckIsGoodInShopKit, RemoveFromShopKit } from "../features/ShopKitUtils";
-export { AddToShopKit, CheckIsGoodInShopKit, RemoveFromShopKit };
+import { AddToShopKit, CheckIsGoodInShopKit, RemoveFromShopKit, ChangeCountInShopKit } from "../features/ShopKitUtils";
+export { AddToShopKit, CheckIsGoodInShopKit, RemoveFromShopKit, ChangeCountInShopKit };
