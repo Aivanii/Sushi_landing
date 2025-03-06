@@ -2,7 +2,7 @@ const DeliveryComponent = () => {
   return (
     <div className="mt-16 py-6 bg-white" id = "delivery">
       <h2 className="text-6xl text-center">Доставка</h2>
-      <div className="flex justify-center items-centers gap-8">
+      <div className="flex justify-center items-center gap-8 flex-col md:flex-row p-4">
         <div>
           <h4 className="text-3xl mb-2">Время работы: </h4>
           <h5>Понедельник-Пятница с 9:00 до 21:00</h5>
