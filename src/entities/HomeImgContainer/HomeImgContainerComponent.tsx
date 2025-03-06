@@ -6,7 +6,7 @@ const HomeImgContainerComponent = () => {
       id="HomeImgContainer"
     >
       <h1
-        className="text-white text-2xl lg:text-6xl 
+        className="text-white text-2xl sm:text-4xl lg:text-6xl 
         md:text-5xl bg-ingerit text-center
       "
       >
