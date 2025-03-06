@@ -1,6 +1,15 @@
 const Header = () => {
   const MoveAsidePanel = () => {
     document.querySelector("aside")?.classList.toggle("active");
+    document.querySelector("#nav-icon2")?.classList.toggle("open");
+    
+    document.querySelector("#burgerBtnSpan1")?.classList.toggle("rotate-45");
+    document.querySelector("#burgerBtnSpan1")?.classList.toggle("mt-6");
+
+    document.querySelector("#burgerBtnSpan2")?.classList.toggle("w-1");
+
+    document.querySelector("#burgerBtnSpan3")?.classList.toggle("rotate-135");
+    document.querySelector("#burgerBtnSpan3")?.classList.toggle("-mt-8");
   };
 
   return (
@@ -25,13 +34,15 @@ const Header = () => {
           </div>
           <div>
             <button
-              id="burgerMenu"
-              className="flex gap-2 flex-col p-4 bg-white rounded-sm md:hidden cursor-pointer z-50 relative"
+              id="nav-icon2"
               onClick={MoveAsidePanel}
             >
-              <div className="w-8 h-1 bg-black rounded-sm"></div>
-              <div className="w-8 h-1 bg-black rounded-sm"></div>
-              <div className="w-8 h-1 bg-black rounded-sm"></div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
           </div>
         </nav>
