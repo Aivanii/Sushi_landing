@@ -1,6 +1,6 @@
 const OrderConditionsComponent = () => {
   return (
-    <div className="bg-white text-black flex justify-center py-8 gap-16 text-2xl">
+    <div className="bg-white text-black flex justify-center p-8 gap-8 lg:gap-16 lg:text-2xl">
       <div className="w-4xs flex justify-center flex-col">
         <h3>Принимаем заказы:</h3>
         <img
