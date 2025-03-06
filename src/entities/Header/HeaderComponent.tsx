@@ -35,6 +35,7 @@ const Header = () => {
           <div>
             <button
               id="nav-icon2"
+              className="fixed right-1"
               onClick={MoveAsidePanel}
             >
               <span></span>
@@ -47,21 +48,21 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      <aside className="fixed top-0 left-full bg-blue w-dvw h-dvh bg-blue-500 z-40 transition">
+      <aside className="fixed top-0 left-full bg-blue w-dvw h-dvh z-40 transition">
         <nav
-          className="flex justify-between p-4 md:justify-around text-white py-8 text-2xl bg-black z-20 items-center
-          flex-col"
+          className="flex justify-around p-4 md:justify-around text-white py-8 text-2xl bg-black z-20 items-center
+          flex-col w-full h-full"
         >
           <div>
             <a href="/">Roll Realms</a>
           </div>
-          <div className="hidden md:visible">
+          <div className="">
             <a href="/#menu">Меню</a>
           </div>
-          <div className="hidden md:visible">
+          <div className="">
             <a href="/#delivery">Доставка</a>
           </div>
-          <div className="hidden md:visible">
+          <div className="">
             <a href="/#contacts">+7 (923) 123-45-67</a>
           </div>
         </nav>
