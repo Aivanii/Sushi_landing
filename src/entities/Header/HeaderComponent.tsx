@@ -2,7 +2,7 @@ const Header = () => {
   const MoveAsidePanel = () => {
     document.querySelector("aside")?.classList.toggle("active");
     document.querySelector("#nav-icon2")?.classList.toggle("open");
-    
+
     document.querySelector("#burgerBtnSpan1")?.classList.toggle("rotate-45");
     document.querySelector("#burgerBtnSpan1")?.classList.toggle("mt-6");
 
@@ -23,19 +23,19 @@ const Header = () => {
           <div>
             <a href="/">Roll Realms</a>
           </div>
-          <div className="hidden md:visible">
+          <div className="hidden md:visible md:block">
             <a href="/#menu">Меню</a>
           </div>
-          <div className="hidden md:visible">
+          <div className="hidden md:visible md:block">
             <a href="/#delivery">Доставка</a>
           </div>
-          <div className="hidden md:visible">
+          <div className="hidden md:visible md:block">
             <a href="/#contacts">+7 (923) 123-45-67</a>
           </div>
           <div>
             <button
               id="nav-icon2"
-              className="fixed right-1"
+              className=" md:hidden"
               onClick={MoveAsidePanel}
             >
               <span></span>
