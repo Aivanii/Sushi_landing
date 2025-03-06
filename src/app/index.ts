@@ -52,3 +52,6 @@ export {
   RemoveFromShopKit,
   ChangeCountInShopKit,
 };
+
+import SetVisibilityForMultiplyShownMenus from "../features/SetVisibilityForMultiplyShownMenus";
+export { SetVisibilityForMultiplyShownMenus };

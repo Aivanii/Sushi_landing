@@ -1,5 +1,6 @@
 import { FullGoodInfo } from "../app";
 import { useState } from "react";
+import { SetVisibilityForMultiplyShownMenus } from "../app/index";
 
 interface ButtonProps {
   goodInfo: {
@@ -16,6 +17,7 @@ const ShowFullInfoButton: React.FC<ButtonProps> = ({ goodInfo }) => {
     <>
       <button
         onClick={() => {
+          SetVisibilityForMultiplyShownMenus();
           setIsVisible(!isVisible);
         }}
         className="bg-amber-500 py-4 px-6 rounded-sm m-4 text-white 
