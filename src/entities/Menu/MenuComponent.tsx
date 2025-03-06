@@ -31,7 +31,7 @@ const MenuComponent = () => {
 
   return (
     <div className="mt-16 bg-white py-8" id="menu">
-      <h2 className=" text-2xl sm:text-4xl md:text-5xl  lg:text-6xl text-center">
+      <h2 className="text-2xl sm:text-4xl md:text-5xl  lg:text-6xl text-center">
         Наше меню
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-8">
