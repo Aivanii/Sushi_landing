@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import classNames from "classnames";
 interface Props {
@@ -76,14 +76,14 @@ const FullGoodInfo: React.FC<Props> = ({
               <div>
                 <button
                   className="cursor-pointer opacity-50 w-12 h-12 z-10 bg-black rounded-sm flex justify-center
-                  items-center flex-col hover:opacity-75 transition absolute right-5 top-5"
+                  items-center flex-col hover:opacity-75 transition absolute right-6 top-6"
                   onClick={startZoomOutAnim}
                 >
                   <div className="w-4 h-0.5 bg-white rotate-45 rounded-sm z-20"></div>
                   <div className="w-4 h-0.5 bg-white rotate-135 rounded-sm z-20 -mt-0.5"></div>
                 </button>
                 <div
-                  className="w-[clamp(200px,50vh,600px)] h-[clamp(150px,37.5vh,450px)] flex overflow-hidden shadow-2xl"
+                  className="w-[clamp(180px,75vw,560px)] h-[clamp(150px,60vw,450px)] flex overflow-hidden shadow-2xl"
                   id="carousel"
                 >
                   {goodInfo.imgs.map((elem, index) => {
@@ -92,13 +92,13 @@ const FullGoodInfo: React.FC<Props> = ({
                         key={index}
                         src={elem}
                         alt={`${goodInfo.name} Фото #${index + 1}`}
-                        className="w-[clamp(200px,50vh,600px)] h-[clamp(150px,37.5vh,450px)] object-cover 
+                        className="w-[clamp(180px,75vw,560px)] h-[clamp(150px,60vw,450px)] object-cover 
                       my-auto rounded-sm shadow-2xl"
                       />
                     );
                   })}
                 </div>
-                <div className="absolute left-(50$) top-8 w-[clamp(200px,50vh,600px)] h-[clamp(150px,37.5vh,450px)]">
+                <div className="absolute left-(50$) top-8 w-[clamp(180px,75vw,560px)] h-[clamp(150px,60vw,450px)]">
                   <div className="flex items-center justify-between h-full p-4">
                     <button
                       onClick={() => changeSlide(-1)}
@@ -121,7 +121,7 @@ const FullGoodInfo: React.FC<Props> = ({
                 </div>
               </div>
             </div>
-            <div className="overflow-y-auto h-2/5 mt-4 markdown-container">
+            <div className="overflow-y-auto h-3/5 lg:h-2/5 mt-4 markdown-container">
               <h3 className="text-2xl text-center">{goodInfo.name}</h3>
               <ReactMarkdown>{goodInfo.goodDescription}</ReactMarkdown>
             </div>
