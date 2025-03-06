@@ -71,3 +71,11 @@ img.icon {
     font-size: 0.8rem;
   }
 }
+
+aside{
+  transition: all 0.5s;
+}
+
+aside.active {
+  left: 0 ;
+}
