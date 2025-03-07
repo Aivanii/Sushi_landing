@@ -28,7 +28,6 @@ const RemoveFromShopKit = (id: number): void => {
 };
 
 const ChangeCountInShopKit = (id: number, count: number): void => {
-  console.log("i was activated");
   let orders = JSON.parse(localStorage.getItem("orders")) || {};
   orders[id].count += count;
   if (count === 0) delete orders[id];
