@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
+import { Button } from "../../../app/index";
+import { Menu } from "../../../app/index";
+import { ChangeCountInShopKit, RemoveFromShopKit } from "../../../app/index";
 const ShopKitComponent = () => {
   const [goodsInShopKit, setGoodsInShopKit] = useState([]);
   const [isAnimZoomOut, setIsAnimZoomOut] = useState<boolean>(false);
@@ -18,13 +21,16 @@ const ShopKitComponent = () => {
     setGoodsInShopKit(newArray);
   };
 
+  const getCountOfGoodsInShopKit = (id: number): number => {
+    return JSON.parse(localStorage.getItem("orders"))[id]?.count || 0;
+  };
+
   useEffect(() => {
     getOrdersFromStorage();
     window.addEventListener("shopKitUpdated", () => {
       getOrdersFromStorage();
     });
   }, []);
-
 
   const startZoomOutAnim = () => {
     setIsAnimZoomOut(true);
@@ -48,7 +54,9 @@ const ShopKitComponent = () => {
         <button
           className="rounded-full
       w-20 h-20 bg-white flex justify-center items-center border-2 z-10 cursor-pointer"
-          onClick={() => {setIsSKVisible(true)}}
+          onClick={() => {
+            setIsSKVisible(true);
+          }}
         >
           <img
             className="w-16 h-16"
@@ -64,24 +72,139 @@ const ShopKitComponent = () => {
           </span>
         </button>
       </div>
+
       {isSKVisible && (
         <div
-          className={classNames("fixed left-0 top-0 w-full h-full p-8 transition", {
-            "zoom-in": !isAnimZoomOut,
-            "zoom-out": isAnimZoomOut
-          })}
+          className={classNames(
+            "fixed left-0 top-0 w-full h-full p-8 transition flex flex-col justify-center items-center shadow-2xl",
+            {
+              "zoom-in": !isAnimZoomOut,
+              "zoom-out": isAnimZoomOut,
+            }
+          )}
         >
-
-<button
-                  className="cursor-pointer opacity-50 w-12 h-12 z-10 bg-black rounded-sm flex justify-center
-                  items-center flex-col hover:opacity-75 transition absolute right-6 top-6"
-                  onClick={startZoomOutAnim}
-                >
-                  <div className="w-4 h-0.5 bg-white rotate-45 rounded-sm z-20"></div>
-                  <div className="w-4 h-0.5 bg-white rotate-135 rounded-sm z-20 -mt-0.5"></div>
-                </button>
-          <div className="bg-white max-w-7xl rounded-sm shadow-lg h-full w-full">
-            shopkit
+          <div className="bg-white rounded-sm shadow-lg h-full w-80 md:w-2xl flex flex-col">
+            <button
+              className="cursor-pointer opacity-50 w-12 h-12 z-10 bg-black rounded-sm flex justify-center
+                  items-center flex-col hover:opacity-75 transition ml-auto"
+              onClick={startZoomOutAnim}
+            >
+              <div className="w-4 h-0.5 bg-white rotate-45 rounded-sm z-20"></div>
+              <div className="w-4 h-0.5 bg-white rotate-135 rounded-sm z-20 -mt-0.5"></div>
+            </button>
+            <div className=" px-8 max-h-3/5 overflow-y-auto">
+              <h4 className="text-2xl sm:text-3xl md:text-4xl text-center">
+                Заказы
+              </h4>
+              <div className="w-[90%] border-[1px] border-black mx-auto opacity-25"></div>
+              {goodsInShopKit.map((elem) => {
+                return (
+                  <div
+                    key={elem.id}
+                    className="w-full h-24 flex justify-center items-center"
+                  >
+                    <div>
+                      <img
+                        src={Menu[elem.id].imgs[0]}
+                        alt={Menu[elem.id].name}
+                        className="h-20 w-20 rounded-sm  object-cover"
+                      />
+                    </div>
+                    <div className="w-full ">
+                      <div className="flex justify-between w-full px-8">
+                        <span className=" text-2xl">{Menu[elem.id].name}</span>
+                        <span>
+                          {Menu[elem.id].price *
+                            getCountOfGoodsInShopKit(elem.id)}{" "}
+                          рублей
+                        </span>
+                      </div>
+                      <div className="px-4">
+                        <Button
+                          text="-"
+                          fn={() => {
+                            if (getCountOfGoodsInShopKit(elem.id) <= 1) {
+                              RemoveFromShopKit(elem.id);
+                            } else {
+                              ChangeCountInShopKit(elem.id, -1);
+                            }
+                          }}
+                        />
+                        <span>{getCountOfGoodsInShopKit(elem.id)}</span>
+                        <Button
+                          text="+"
+                          fn={() => {
+                            if (getCountOfGoodsInShopKit(elem.id) <= 98) {
+                              ChangeCountInShopKit(elem.id, 1);
+                            }
+                          }}
+                        />
+                        <Button
+                          text="Удалить"
+                          className="ml-4"
+                          fn={() => {
+                            RemoveFromShopKit(elem.id);
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="text-right px-8 mt-4">
+              <span>
+                Сумма:{" "}
+                {goodsInShopKit.reduce(function (sum, currentElem) {
+                  return (
+                    sum +
+                    getCountOfGoodsInShopKit(currentElem.id) *
+                      Menu[currentElem.id].price
+                  );
+                }, 0)}{" "}
+                рублей
+              </span>
+            </div>
+            <div className="w-[90%] border-[1px] border-black mx-auto opacity-25 mt-4" />
+            <div className="h-1/5 mt-4 px-8">
+              <h4 className="text-2xl sm:text-3xl md:text-4xl text-center">
+                Данные для заказа
+              </h4>
+              <form className="flex flex-col gap-4">
+                <input
+                  type="text"
+                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg  px-4"
+                  placeholder="Ваше имя"
+                  required
+                />
+                <input
+                  type="tel"
+                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg  px-4"
+                  placeholder="Ваше телефон"
+                  required
+                />
+                <input
+                  type="email"
+                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg  px-4"
+                  placeholder="Ваш email"
+                  required
+                />
+              </form>
+            </div>
+            <div className="w-[90%] border-[1px] border-black mx-auto opacity-25 mt-4" />
+            <div className="flex justify-center items-center">
+              <button
+                className="bg-amber-500 rounded-sm m-4 text-white 
+    hover:bg-amber-600 transition active:bg-amber-700 cursor-pointer w-full px-8 h-10"
+                type="submit"
+                onSubmit={() => {
+                  location.reload();
+                  localStorage.removeItem("orders");
+                }}
+              >
+                Оформить заказ
+              </button>
+            </div>
           </div>
         </div>
       )}
