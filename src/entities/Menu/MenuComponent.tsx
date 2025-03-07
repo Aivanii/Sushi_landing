@@ -45,7 +45,7 @@ const MenuComponent = () => {
               />
               <h4 className=" text-2xl md:text-3xl text-center">{elem.name}</h4>
               <p className="text-left line-clamp-2">{elem.goodDescription}</p>
-              <span className="pt-6">Количество: {elem.count.toFixed(2)}</span>
+              <span className="pt-6">Количество: {elem.count}</span>
               <span>Цена: {elem.price} рублей</span>
               <div className="flex justify-between w-auto relative">
                 {goodsCountInOrderList[index] ? (
