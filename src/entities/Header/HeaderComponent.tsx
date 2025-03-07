@@ -48,7 +48,7 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      <aside className="fixed top-0 left-full bg-blue w-dvw h-dvh z-40 transition">
+      <aside className="fixed top-0 left-full bg-blue w-[105vw] h-[105vh] z-40 transition">
         <nav
           className="flex justify-around p-4 md:justify-around text-white py-8 text-2xl bg-black z-20 items-center
           flex-col w-full h-full"
