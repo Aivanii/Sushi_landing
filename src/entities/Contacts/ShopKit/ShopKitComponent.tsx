@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import classNames from "classnames";
 const ShopKitComponent = () => {
   const [goodsInShopKit, setGoodsInShopKit] = useState([]);
+  const [isAnimZoomOut, setIsAnimZoomOut] = useState<boolean>(false);
+  const [isSKVisible, setIsSKVisible] = useState<boolean>(false);
 
   const getOrdersFromStorage = () => {
     let newArray = [];
@@ -22,6 +25,15 @@ const ShopKitComponent = () => {
     });
   }, []);
 
+
+  const startZoomOutAnim = () => {
+    setIsAnimZoomOut(true);
+    setTimeout(() => {
+      setIsSKVisible(false);
+      setIsAnimZoomOut(false);
+    }, 250);
+  };
+
   const totalGoodsInShopKit: number = goodsInShopKit.reduce(function (
     sum,
     current
@@ -29,12 +41,14 @@ const ShopKitComponent = () => {
     return sum + current.count;
   },
   0);
+
   return (
     <>
       <div className="fixed bottom-2 right-2 ">
         <button
           className="rounded-full
       w-20 h-20 bg-white flex justify-center items-center border-2 z-10 cursor-pointer"
+          onClick={() => {setIsSKVisible(true)}}
         >
           <img
             className="w-16 h-16"
@@ -50,6 +64,27 @@ const ShopKitComponent = () => {
           </span>
         </button>
       </div>
+      {isSKVisible && (
+        <div
+          className={classNames("fixed left-0 top-0 w-full h-full p-8 transition", {
+            "zoom-in": !isAnimZoomOut,
+            "zoom-out": isAnimZoomOut
+          })}
+        >
+
+<button
+                  className="cursor-pointer opacity-50 w-12 h-12 z-10 bg-black rounded-sm flex justify-center
+                  items-center flex-col hover:opacity-75 transition absolute right-6 top-6"
+                  onClick={startZoomOutAnim}
+                >
+                  <div className="w-4 h-0.5 bg-white rotate-45 rounded-sm z-20"></div>
+                  <div className="w-4 h-0.5 bg-white rotate-135 rounded-sm z-20 -mt-0.5"></div>
+                </button>
+          <div className="bg-white max-w-7xl rounded-sm shadow-lg h-full w-full">
+            shopkit
+          </div>
+        </div>
+      )}
     </>
   );
 };
