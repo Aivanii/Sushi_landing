@@ -115,8 +115,7 @@ const ShopKitComponent = () => {
                         <span className=" text-2xl">{Menu[elem.id].name}</span>
                         <span>
                           {Menu[elem.id].price *
-                            getCountOfGoodsInShopKit(elem.id)}{" "}
-                          рублей
+                            getCountOfGoodsInShopKit(elem.id).toFixed(2)} рублей
                         </span>
                       </div>
                       <div className="px-4">
@@ -161,8 +160,7 @@ const ShopKitComponent = () => {
                     getCountOfGoodsInShopKit(currentElem.id) *
                       Menu[currentElem.id].price
                   );
-                }, 0)}{" "}
-                рублей
+                }, 0).toFixed(2)} рублей
               </span>
             </div>
             <div className="w-[90%] border-[1px] border-black mx-auto opacity-25 mt-4" />
