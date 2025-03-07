@@ -2,7 +2,7 @@ const HomeImgContainerComponent = () => {
   return (
     <div
       className="h-screen mt-[-96px] z-10 flex items-center bg-linear-to-r from-black to-inherit
-    w-6xl pl-6 md:pl-20"
+    w-2xs sm:w-xl md:w-3xl lg:w-6xl pl-6 md:pl-20"
       id="HomeImgContainer"
     >
       <h1
