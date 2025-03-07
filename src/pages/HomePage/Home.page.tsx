@@ -5,6 +5,7 @@ import { MenuComponent } from "../../app/index";
 import { DeliveryComponent } from "../../app/index";
 import { ContactsComponent } from "../../app/index";
 import { Footer } from "../../app/index";
+import {ShopKitComponent } from "../../app/index";
 const HomePage = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const HomePage = () => {
       <HomeImgContainerComponent />
       <OrderConditionsComponent />
       <MenuComponent />
+      <ShopKitComponent />
       <DeliveryComponent />
       <ContactsComponent />
       <Footer />
