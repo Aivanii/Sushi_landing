@@ -39,6 +39,9 @@ export { Button };
 import ShowFullInfoButton from "../shared/ShowFullInfoButton";
 export { ShowFullInfoButton };
 
+import Input from "../shared/Input";
+export { Input };
+
 //features
 import FullGoodInfo from "../features/FullGoodInfo";
 export { FullGoodInfo };
