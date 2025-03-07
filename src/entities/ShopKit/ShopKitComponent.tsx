@@ -63,13 +63,15 @@ const ShopKitComponent = () => {
             src="https://img.icons8.com/?size=100&id=0DBkCUANmgoQ&format=png&color=000000"
             alt="Корзина"
           />
-          <span
-            className="absolute top-0 right-0 z-20 bg-amber-600 w-8 h-8 rounded-full
+          {totalGoodsInShopKit > 0 && (
+            <span
+              className="absolute top-0 right-0 z-20 bg-amber-600 w-8 h-8 rounded-full
         flex justify-center  items-center text-center text-white border-2 border-black"
-          >
-            {totalGoodsInShopKit > 0 &&
-              (totalGoodsInShopKit > 99 ? "99+" : totalGoodsInShopKit)}
-          </span>
+            >
+              {totalGoodsInShopKit > 0 &&
+                (totalGoodsInShopKit > 99 ? "99+" : totalGoodsInShopKit)}
+            </span>
+          )}
         </button>
       </div>
 
@@ -115,7 +117,8 @@ const ShopKitComponent = () => {
                         <span className=" text-2xl">{Menu[elem.id].name}</span>
                         <span>
                           {Menu[elem.id].price *
-                            getCountOfGoodsInShopKit(elem.id).toFixed(2)} рублей
+                            getCountOfGoodsInShopKit(elem.id).toFixed(2)}{" "}
+                          рублей
                         </span>
                       </div>
                       <div className="px-4">
@@ -154,13 +157,16 @@ const ShopKitComponent = () => {
             <div className="text-right px-8 mt-4">
               <span>
                 Сумма:{" "}
-                {goodsInShopKit.reduce(function (sum, currentElem) {
-                  return (
-                    sum +
-                    getCountOfGoodsInShopKit(currentElem.id) *
-                      Menu[currentElem.id].price
-                  );
-                }, 0).toFixed(2)} рублей
+                {goodsInShopKit
+                  .reduce(function (sum, currentElem) {
+                    return (
+                      sum +
+                      getCountOfGoodsInShopKit(currentElem.id) *
+                        Menu[currentElem.id].price
+                    );
+                  }, 0)
+                  .toFixed(2)}{" "}
+                рублей
               </span>
             </div>
             <div className="w-[90%] border-[1px] border-black mx-auto opacity-25 mt-4" />
