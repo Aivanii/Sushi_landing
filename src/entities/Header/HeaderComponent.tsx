@@ -57,13 +57,19 @@ const Header = () => {
             <a href="/">Roll Realms</a>
           </div>
           <div className="">
-            <a href="/#menu">Меню</a>
+            <a href="/#menu" onClick={MoveAsidePanel}>
+              Меню
+            </a>
           </div>
           <div className="">
-            <a href="/#delivery">Доставка</a>
+            <a href="/#delivery" onClick={MoveAsidePanel}>
+              Доставка
+            </a>
           </div>
           <div className="">
-            <a href="/#contacts">+7 (923) 123-45-67</a>
+            <a href="/#contacts" onClick={MoveAsidePanel}>
+              +7 (923) 123-45-67
+            </a>
           </div>
         </nav>
       </aside>
