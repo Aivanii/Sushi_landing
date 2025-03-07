@@ -20,7 +20,7 @@ export { MenuComponent };
 import { Menu } from "../entities/Menu/Menu";
 export { Menu };
 
-import ShopKitComponent from "../entities/Contacts/ShopKit/ShopKitComponent";
+import ShopKitComponent from "../entities/ShopKit/ShopKitComponent";
 export { ShopKitComponent };
 
 import DeliveryComponent from "../entities/Delivery/DeliveryComponent";

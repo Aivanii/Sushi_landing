@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
-import { Button } from "../../../app/index";
-import { Menu } from "../../../app/index";
-import { ChangeCountInShopKit, RemoveFromShopKit } from "../../../app/index";
+import { Button } from "../../app/index";
+import { Menu } from "../../app/index";
+import { ChangeCountInShopKit, RemoveFromShopKit } from "../../app/index";
 const ShopKitComponent = () => {
   const [goodsInShopKit, setGoodsInShopKit] = useState([]);
   const [isAnimZoomOut, setIsAnimZoomOut] = useState<boolean>(false);
@@ -55,7 +55,7 @@ const ShopKitComponent = () => {
           className="rounded-full
       w-20 h-20 bg-white flex justify-center items-center border-2 z-10 cursor-pointer"
           onClick={() => {
-            setIsSKVisible(true);
+            if (totalGoodsInShopKit > 0) setIsSKVisible(true);
           }}
         >
           <img
