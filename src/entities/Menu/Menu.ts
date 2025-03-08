@@ -423,9 +423,13 @@ export const Menu: MenuInterface[] = [
     name: "Ролл с авокадо",
     imgs: [
       "https://www.distfood.ru/upload/medialibrary/79b/79bf87964d15da3cd62f8531e49a770b.jpg",
+      "https://goodfoodshop.ru/__/images/menuProduct/64e60372b04f7_w900_jpg.webp",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLVGEWGVkfl3CufdBx9s6buoWHILDSqrTfGQ&s",
+      "https://static.1000.menu/img/content-v2/ee/ed/6824/rolly-s-avokado_1657603876_27_max.jpg",
+      "https://xn--80ahluh7b.xn--p1acf/assets/images/japan/rolls/roll-avokado-krevetka.jpg"
     ],
-    price: 270,
-    count: 4,
+    price: 599.99,
+    count: 6,
     goodDescription:
       "Роллы с авокадо — это легкий и питательный выбор для перекуса.",
   },
