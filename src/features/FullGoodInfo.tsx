@@ -76,7 +76,7 @@ const FullGoodInfo: React.FC<Props> = ({
               <div>
                 <button
                   className="cursor-pointer opacity-50 w-12 h-12 z-10 bg-black rounded-sm flex justify-center
-                  items-center flex-col hover:opacity-75 transition absolute right-6 top-6"
+                  items-center flex-col hover:opacity-75 transition absolute right-7.5 top-6"
                   onClick={startZoomOutAnim}
                 >
                   <div className="w-4 h-0.5 bg-white rotate-45 rounded-sm z-20"></div>
@@ -121,7 +121,7 @@ const FullGoodInfo: React.FC<Props> = ({
                 </div>
               </div>
             </div>
-            <div className="overflow-y-auto h-4/12 sm:h-2/5 mt-4 markdown-container">
+            <div className="overflow-y-auto h-[20vh] max-h-[480px] mt-4 markdown-container">
               <h3 className="text-xl md:text-2xl  text-center">{goodInfo.name}</h3>
               <ReactMarkdown>{goodInfo.goodDescription}</ReactMarkdown>
             </div>
