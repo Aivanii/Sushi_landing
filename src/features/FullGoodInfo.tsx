@@ -20,7 +20,7 @@ const FullGoodInfo: React.FC<Props> = ({
   isAnimZoomOut,
   setIsAnimZoomOut,
 }) => {
-  const currentSlide = useRef<number>(1);
+  const currentSlide = useRef<number>(0);
 
   const changeSlide = (value: number) => {
     if (currentSlide.current + value > goodInfo.imgs.length - 1) {
