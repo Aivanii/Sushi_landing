@@ -1,17 +1,19 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import classNames from "classnames";
 import { Button } from "../../app/index";
 import { Menu } from "../../app/index";
 import { ChangeCountInShopKit, RemoveFromShopKit } from "../../app/index";
+
+
 const ShopKitComponent = () => {
-  const [goodsInShopKit, setGoodsInShopKit] = useState([]);
+  const [goodsInShopKit, setGoodsInShopKit] = useState<{id: string, count: number}[]>([]);
   const [isAnimZoomOut, setIsAnimZoomOut] = useState<boolean>(false);
   const [isSKVisible, setIsSKVisible] = useState<boolean>(false);
 
   const getOrdersFromStorage = () => {
-    let newArray = [];
-    const ordersInLocalStorage =
-      JSON.parse(localStorage.getItem("orders")) || {};
+    const newArray: { id: string; count: number }[] = [];
+    const ordersString = localStorage.getItem("orders");
+    const ordersInLocalStorage = ordersString ? JSON.parse(ordersString) : {};
     for (const property in ordersInLocalStorage) {
       newArray.push({
         id: property,

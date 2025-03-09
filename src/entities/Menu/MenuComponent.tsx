@@ -14,14 +14,14 @@ const MenuComponent = () => {
   );
 
   useEffect(() => {
-    const newArray = Menu.map((item) => {
-      return CheckIsGoodInShopKit(`${item.id}`)
-        ? CheckIsGoodInShopKit(`${item.id}`)
-        : 0;
+    const newArray: number[] = Menu.map((item) => {
+      const isGood = CheckIsGoodInShopKit(`${item.id}`);
+      return isGood ? 1 : 0; // Assuming you want to return 1 if good, otherwise 0
     });
 
     setGoodsCountInOrderList(newArray);
-  }, []);
+}, []);
+
 
   const changeStateGoodsInOrderList = (index: number, count: number): void => {
     let newArray = [...goodsCountInOrderList];
