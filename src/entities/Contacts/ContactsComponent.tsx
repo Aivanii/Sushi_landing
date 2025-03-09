@@ -33,13 +33,13 @@ const ContactsComponent = () => {
         </div>
         <div className="mx-auto mt-4">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230467.43830979816!2d-9.36244083497454!3d53.546918960565606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48448fff30655681%3A0xb49ba57568fac0b6!2z0JfQsNC80L7QuiDQrdGI0YTQvtGA0LQ!5e0!3m2!1sru!2sru!4v1741146917770!5m2!1sru!2sru"
-            style={{ border: 0 }}
-            className="h-80 w-dvw max-w-5xl my-auto"
-            allowFullScreen={true}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442660.3192696706!2d-13.214806696659675!3d53.28218185123267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4859bae45c4027fb%3A0xcf7c1234cedbf408!2sIreland!5e0!3m2!1sen!2sru!4v1741523079751!5m2!1sen!2sru"
+            className="w-3xs md:w-lg lg:max-w-3xl"
+            height="300"
+            style={{ border: "0" }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
         </div>
       </div>
     </div>
