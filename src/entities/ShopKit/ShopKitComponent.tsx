@@ -4,7 +4,12 @@ import { Button } from "../../app/index";
 import { Menu } from "../../app/index";
 import { ChangeCountInShopKit, RemoveFromShopKit } from "../../app/index";
 
-
+interface MenuItemInterface {
+  name: string;
+  imgs: string[];
+  price: number;
+  id: string;
+}
 const ShopKitComponent = () => {
   const [goodsInShopKit, setGoodsInShopKit] = useState<{id: string, count: number}[]>([]);
   const [isAnimZoomOut, setIsAnimZoomOut] = useState<boolean>(false);
@@ -23,8 +28,10 @@ const ShopKitComponent = () => {
     setGoodsInShopKit(newArray);
   };
 
-  const getCountOfGoodsInShopKit = (id: number): number => {
-    return JSON.parse(localStorage.getItem("orders"))[id]?.count || 0;
+  const getCountOfGoodsInShopKit = (id: string): number => {
+    const ordersString = localStorage.getItem("orders");
+    if (!ordersString) return 0;
+    return JSON.parse(ordersString)[id]?.count || 0;
   };
 
   useEffect(() => {
@@ -102,6 +109,8 @@ const ShopKitComponent = () => {
               </h4>
               <div className="w-[90%] border-[1px] border-black mx-auto opacity-25"></div>
               {goodsInShopKit.map((elem) => {
+                const menuItem : MenuItemInterface 
+                = Menu[elem.id as keyof typeof Menu];
                 return (
                   <div
                     key={elem.id}
@@ -109,17 +118,17 @@ const ShopKitComponent = () => {
                   >
                     <div>
                       <img
-                        src={Menu[elem.id].imgs[0]}
-                        alt={Menu[elem.id].name}
+                        src={menuItem.imgs[0]}
+                        alt={menuItem.name}
                         className="h-20 w-20 rounded-sm  object-cover"
                       />
                     </div>
                     <div className="w-full ">
                       <div className="flex justify-between w-full px-8">
-                        <span className=" text-2xl">{Menu[elem.id].name}</span>
+                        <span className=" text-2xl">{menuItem.name}</span>
                         <span>
-                          {Menu[elem.id].price *
-                            getCountOfGoodsInShopKit(elem.id).toFixed(2)}{" "}
+                          {menuItem.price *
+                            getCountOfGoodsInShopKit(elem.id).toFixed(2)}
                           рублей
                         </span>
                       </div>
@@ -164,7 +173,7 @@ const ShopKitComponent = () => {
                     return (
                       sum +
                       getCountOfGoodsInShopKit(currentElem.id) *
-                        Menu[currentElem.id].price
+                        Menu[currentElem.id as keyof typeof Menu].price
                     );
                   }, 0)
                   .toFixed(2)}{" "}
