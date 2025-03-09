@@ -6,8 +6,7 @@ const createEvent = () => {
 };
 
 const AddToShopKit = (id: number): void => {
-  const ordersString = localStorage.getItem("orders");
-  if (!ordersString) return;
+  const ordersString = localStorage.getItem("orders") || [];
   const orders: OrderInterface[] = JSON.parse(ordersString);
   const existingOrder = orders.find(order => order.id === id);
 

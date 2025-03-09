@@ -187,22 +187,22 @@ const ShopKitComponent = () => {
               <h4 className="text-2xl sm:text-3xl md:text-4xl text-center">
                 Данные для заказа
               </h4>
-              <form className="flex flex-col gap-4">
+              <form className="flex flex-col gap-4 ">
                 <input
                   type="text"
-                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg  px-4"
+                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg px-4"
                   placeholder="Ваше имя"
                   required
                 />
                 <input
                   type="tel"
-                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg  px-4"
+                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg px-4"
                   placeholder="Ваше телефон"
                   required
                 />
                 <input
                   type="email"
-                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg  px-4"
+                  className="border-0 bg-amber-500 opacity-80 text-white rounded-sm w-full h-10 shadow-lg px-4"
                   placeholder="Ваш email"
                   required
                 />
