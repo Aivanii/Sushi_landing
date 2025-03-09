@@ -5,10 +5,12 @@ import { Menu } from "../../app/index";
 import { ChangeCountInShopKit, RemoveFromShopKit } from "../../app/index";
 
 interface MenuItemInterface {
+  id: number;
   name: string;
   imgs: string[];
   price: number;
-  id: string;
+  count: number;
+  goodDescription: string;
 }
 const ShopKitComponent = () => {
   const [goodsInShopKit, setGoodsInShopKit] = useState<{id: string, count: number}[]>([]);
@@ -170,10 +172,11 @@ const ShopKitComponent = () => {
                 Сумма:{" "}
                 {goodsInShopKit
                   .reduce(function (sum, currentElem) {
+                    const menuItem = Menu[currentElem.id as keyof typeof Menu] as MenuItemInterface;
                     return (
                       sum +
                       getCountOfGoodsInShopKit(currentElem.id) *
-                        Menu[currentElem.id as keyof typeof Menu].price
+                        menuItem.price
                     );
                   }, 0)
                   .toFixed(2)}{" "}
