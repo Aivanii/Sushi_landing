@@ -111,8 +111,7 @@ const ShopKitComponent = () => {
               </h4>
               <div className="w-[90%] border-[1px] border-black mx-auto opacity-25"></div>
               {goodsInShopKit.map((elem) => {
-                const menuItem : MenuItemInterface 
-                = Menu[elem.id as keyof typeof Menu];
+                const menuItem = Menu[elem.id as keyof typeof Menu] as MenuItemInterface;
                 return (
                   <div
                     key={elem.id}
