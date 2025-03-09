@@ -5,6 +5,7 @@ html {
 body {
   min-height: 360px;
   font-size: 1rem;
+  overflow-x: hidden;
 }
 * {
   font-family: "Courier Prime";
