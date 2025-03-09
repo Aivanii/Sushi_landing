@@ -127,8 +127,9 @@ const ShopKitComponent = () => {
                       <div className="flex justify-between w-full px-8">
                         <span className=" text-2xl">{menuItem.name}</span>
                         <span>
-                          {menuItem.price *
-                            getCountOfGoodsInShopKit(elem.id).toFixed(2)}
+                          {getCountOfGoodsInShopKit(elem.id) && (
+                          (menuItem.price * getCountOfGoodsInShopKit(elem.id)).toFixed(2)
+                          )}
                           рублей
                         </span>
                       </div>
@@ -137,9 +138,9 @@ const ShopKitComponent = () => {
                           text="-"
                           fn={() => {
                             if (getCountOfGoodsInShopKit(elem.id) <= 1) {
-                              RemoveFromShopKit(elem.id);
+                              RemoveFromShopKit(Number(elem.id));
                             } else {
-                              ChangeCountInShopKit(elem.id, -1);
+                              ChangeCountInShopKit(Number(elem.id), -1);
                             }
                           }}
                         />
@@ -148,15 +149,14 @@ const ShopKitComponent = () => {
                           text="+"
                           fn={() => {
                             if (getCountOfGoodsInShopKit(elem.id) <= 98) {
-                              ChangeCountInShopKit(elem.id, 1);
+                              ChangeCountInShopKit(Number(elem.id), 1);
                             }
                           }}
                         />
                         <Button
                           text="Удалить"
-                          className="ml-4"
                           fn={() => {
-                            RemoveFromShopKit(elem.id);
+                            RemoveFromShopKit(Number(elem.id));
                           }}
                         />
                       </div>
