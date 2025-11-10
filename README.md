@@ -1,1 +1,1 @@
-This project was created just for practise react, typescript and tailwind
+This project was created just for practicing react, typescript and tailwind
